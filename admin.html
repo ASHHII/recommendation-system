@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PickFlip - Admin Control Panel</title>
+    <style>
+        :root {
+            --bg-color: #1e272e;
+            --card-bg: #2f3640;
+            --accent-color: #2ed573;
+            --text-color: #ffffff;
+            --input-bg: #57606f;
+            --error-color: #ff4757;
+        }
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: var(--bg-color);
+            color: var(--text-color);
+            margin: 0;
+            padding: 20px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            min-height: 90vh;
+            justify-content: center;
+        }
+        .container {
+            background-color: var(--card-bg);
+            padding: 30px;
+            border-radius: 12px;
+            box-shadow: 0 8px 16px rgba(0,0,0,0.3);
+            width: 100%;
+            max-width: 400px;
+            border: 2px solid var(--accent-color);
+        }
+        h2 {
+            text-align: center;
+            color: var(--accent-color);
+            margin-top: 0;
+        }
+        label {
+            display: block;
+            margin: 15px 0 5px;
+            font-weight: 600;
+        }
+        select, input {
+            width: 100%;
+            padding: 10px;
+            border-radius: 6px;
+            border: none;
+            background-color: var(--input-bg);
+            color: white;
+            box-sizing: border-box;
+            font-size: 16px;
+        }
+        button {
+            width: 100%;
+            background-color: var(--accent-color);
+            color: white;
+            border: none;
+            padding: 12px;
+            border-radius: 6px;
+            font-size: 16px;
+            font-weight: bold;
+            cursor: pointer;
+            margin-top: 25px;
+            transition: opacity 0.2s;
+        }
+        button:hover {
+            opacity: 0.9;
+        }
+        .back-link {
+            margin-top: 20px;
+            font-size: 13px;
+            color: #a4b0be;
+            text-decoration: none;
+        }
+        .back-link:hover {
+            color: white;
+        }
+        /* Auth Screen Styles */
+        #loginGate {
+            border-color: #ff6b81;
+        }
+        .error-msg {
+            color: var(--error-color);
+            font-size: 14px;
+            text-align: center;
+            margin-top: 10px;
+            display: none;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container" id="loginGate">
+        <h2 style="color: #ff6b81;">🔒 Admin Security Gate</h2>
+        <p style="text-align: center; font-size: 13px; color: #a4b0be;">Authorized Group access tokens required.</p>
+        
+        <label for="usernameInput">Username:</label>
+        <input type="text" id="usernameInput" placeholder="Enter admin username">
+
+        <label for="passwordInput">Password:</label>
+        <input type="password" id="passwordInput" placeholder="Enter secret password">
+
+        <button id="loginSubmitBtn" style="background-color: #ff6b81;">Verify Credentials</button>
+        <div class="error-msg" id="loginError">Invalid credentials! Access denied.</div>
+    </div>
+
+    <div class="container" id="adminContentPanel" style="display: none;">
+        <h2>⚙️ Admin Control Panel</h2>
+        <p style="text-align: center; font-size: 13px; color: #a4b0be; margin-bottom: 15px;">Add or modify system records in real-time</p>
+        
+        <label for="adminTitle">Movie Title:</label>
+        <input type="text" id="adminTitle" placeholder="e.g., Avatar">
+
+        <label for="adminGenre">Genre:</label>
+        <select id="adminGenre">
+            <option value="Action">Action</option>
+            <option value="Sci-Fi">Sci-Fi</option>
+            <option value="Comedy">Comedy</option>
+        </select>
+
+        <label for="adminMood">Vibe/Category:</label>
+        <select id="adminMood">
+            <option value="Adrenaline">Adrenaline</option>
+            <option value="Mind-Bending">Mind-Bending</option>
+            <option value="Chill">Chill</option>
+        </select>
+
+        <label for="adminRating">Initial IMDb Rating:</label>
+        <input type="number" id="adminRating" step="0.1" min="1" max="10" placeholder="e.g., 8.5">
+
+        <button id="adminAddBtn">Add Movie to Dataset</button>
+    </div>
+
+    <a href="index.html" class="back-link">← Back to Recommendation System</a>
+
+    <script src="app.js"></script>
+</body>
+</html>
