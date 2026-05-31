@@ -39,13 +39,31 @@ class RecommendationEngine {
 // Initialize our system
 const myEngine = new RecommendationEngine();
 
-// Seeding standard data into the engine
+// --- UPDATED DATASET: Movies for EVERY single combination ---
+
+// 1. ACTION Matches
 myEngine.addItem(new MediaItem("The Dark Knight", "Action", "Adrenaline", "9.0"));
 myEngine.addItem(new MediaItem("Mad Max: Fury Road", "Action", "Adrenaline", "8.1"));
-myEngine.addItem(new MediaItem("Inception", "Sci-Fi", "Mind-Bending", "8.8"));
+myEngine.addItem(new MediaItem("The Matrix", "Action", "Mind-Bending", "8.7"));
+myEngine.addItem(new MediaItem("Inception", "Action", "Mind-Bending", "8.8"));
+myEngine.addItem(new MediaItem("Deadpool", "Action", "Chill", "8.0"));
+myEngine.addItem(new MediaItem("Free Guy", "Action", "Chill", "7.1"));
+
+// 2. SCI-FI Matches
 myEngine.addItem(new MediaItem("Interstellar", "Sci-Fi", "Mind-Bending", "8.6"));
+myEngine.addItem(new MediaItem("Tenet", "Sci-Fi", "Mind-Bending", "7.3"));
+myEngine.addItem(new MediaItem("The Avengers", "Sci-Fi", "Adrenaline", "8.0"));
+myEngine.addItem(new MediaItem("Edge of Tomorrow", "Sci-Fi", "Adrenaline", "7.9"));
+myEngine.addItem(new MediaItem("The Martian", "Sci-Fi", "Chill", "8.0"));
+myEngine.addItem(new MediaItem("Wall-E", "Sci-Fi", "Chill", "8.4"));
+
+// 3. COMEDY Matches
 myEngine.addItem(new MediaItem("Superbad", "Comedy", "Chill", "7.6"));
 myEngine.addItem(new MediaItem("The Hangover", "Comedy", "Chill", "7.7"));
+myEngine.addItem(new MediaItem("21 Jump Street", "Comedy", "Adrenaline", "7.2"));
+myEngine.addItem(new MediaItem("Tropic Thunder", "Comedy", "Adrenaline", "7.0"));
+myEngine.addItem(new MediaItem("The Truman Show", "Comedy", "Mind-Bending", "8.2"));
+myEngine.addItem(new MediaItem("Everything Everywhere All at Once", "Comedy", "Mind-Bending", "7.8"));
 
 
 // --- DOM MANIPULATION (Connecting the UI elements to our logic) ---
